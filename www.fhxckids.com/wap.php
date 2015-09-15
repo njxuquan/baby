@@ -28,26 +28,8 @@
 		</header>
 		<div class="main">		
 			<div class="swiper-container">
-	    	<div class="swiper-wrapper">
-			<?php echo wapRender($arrData, '_1'); ?>
-	        <!--div class="swiper-slide">
-	        	<a href="">
-	        		<img src="img_moblie/p_banners1.jpg">
-	        		<div><p>萌宝大赛118号-可爱的小丫丫</p></div>
-	        	</a>
-	        </div>
-	        <div class="swiper-slide">
-	        	<a href="">
-	        		<img src="img_moblie/p_banners1.jpg">
-	        		<div><p>萌宝大赛118号-可爱的小丫丫</p></div>
-	        	</a>
-	        </div>
-	        <div class="swiper-slide">
-	        	<a href="">
-	        		<img src="img_moblie/p_banners1.jpg">        		
-	        		<div><p>萌宝大赛118号-可爱的小丫丫</p></div>
-	        	</a>
-	        </div-->
+	    	<div class="swiper-wrapper" id="baby_posid1">
+				<?php echo wapRender($arrData, '_1'); ?>
 	    	</div>
 	    	<div class="swiper-pagination"></div>
 			</div>
@@ -77,69 +59,22 @@
 					</a>
 				</li>
 			</ul>
-			<div class="hot bor1 wz wz1">
+			<div class="hot bor1 wz wz1" id="baby_posid2">
 				<h3>今日热点</h3>
 				<?php echo wapRender($arrData, '_2'); ?>
-				<!--a href=""><p>九月的到，此时也...</p></a>	
-				<a href=""><p>为了让宝好好了解...</p></a>
-				<a href=""><p>在《爸爸林大竣...</p></a-->
 			</div>
-			<div class="policy bor1 wz wz2">
+			<div class="policy bor1 wz wz2" id="baby_posid3">
 				<h3>政策解读</h3>
 				<?php echo wapRender($arrData, '_3'); ?>
-				<!--a href=""><p>九月的到来过去，此时也...</p></a>	
-				<a href=""><p>为了让宝要好好了解...</p></a>
-				<a href=""><p>在《爸、林大竣...</p></a-->
 			</div>
-			<div class="age0_3 ages bor1">
+			<div class="age0_3 ages bor1" id="baby_posid4">
 				<h3 class="clearfix"><span>健康萌宝贝</span><font>0-3岁</font></h3>
 				<?php echo wapRender($arrData, '_4'); ?>
-				<!--div class="clearfix">
-					<a class="left" href="">
-						<img src="img_moblie/p_age_pic1.jpg">	
-					</a>
-		
-					<a class="right" href="">
-						<h5>【行为习惯】 预防宝宝过敏</h5>
-						<p>跟奶粉不知道是现</p>
-					</a>	
-				</div>
-				<div class="clearfix">
-					<a class="left" href="">
-						<img src="img_moblie/p_age_pic2.jpg">	
-					</a>
-					<a class="right" href="">
-						<h5>【行为习惯】 预防宝宝过敏</h5>
-						<p>跟奶粉不知道是现</p>
-					</a>	
-				</div>
-				<div class="clearfix">
-					<a class="left" href="">
-						<img src="img_moblie/p_age_pic3.jpg">	
-					</a>
-					<a class="right" href="">
-						<h5>【行为习惯】 预防宝宝过敏</h5>
-						<p>跟奶不知道是现</p>
-					</a>	
-				</div>
-				<div class="clearfix">
-					<a  class="left" href="">
-						<img src="img_moblie/p_age_pic4.jpg">	
-					</a>
-					<a class="right" href="">
-						<h5>【行为习惯】 预防宝宝过敏</h5>
-						<p>跟奶粉不知道是现</p>
-					</a>	
-				</div-->	
 			</div>
 			<div class="online wz wz2 main_c bor1">
 				<h3>专家在线</h3>
-				<div class="pic_mod">
+				<div class="pic_mod" id="baby_posid5">
 					<?php echo wapRender($arrData, '_5'); ?>
-					<!--a href="">
-						<img src="img_moblie/p_online_pic.jpg">	
-						<div><p>专家杨:怎样预防儿童秋季感冒</p></div>
-					</a-->
 				</div>
 				<h3>讲座精选</h3>
 				<?php echo wapRender($arrData, '_6'); ?>
@@ -152,105 +87,47 @@
 			</div>	
 			<div class="see wz wz3 main_c bor1">
 				<h3>宝宝看世界</h3>
-				<div class="see_c p_3 clearfix">
+				<div class="see_c p_3 clearfix" id="baby_posid8">
 					<?php echo wapRender($arrData, '_8'); ?>
-					<!--a href="">
-						<img src="img_moblie/p_see_pic1.jpg">
-						<p>带宝贝奔跑</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_see_pic2.jpg">
-						<p>带宝贝奔跑</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_see_pic3.jpg">
-						<p>带宝贝奔跑</p>
-					</a-->
 				</div>
 			</div>
-			<div class="help wz wz1 main_c bor1">
+			<div class="help wz wz1 main_c bor1" id="baby_posid7">
 				<h3>帮你帮我</h3>
 				<?php echo wapRender($arrData, '_7'); ?>
-				<!--a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a-->
 			</div>
 			<div class="grew ages main_c bor1">
 				<h3 class="clearfix"><span>成长不烦恼</span><font>3-6岁</font></h3>
-				<div class="grew_c p_3 clearfix">
+				<div class="grew_c p_3 clearfix" id="baby_posid9">
 					<?php echo wapRender($arrData, '_9'); ?>
-					<!--a href="">
-						<img src="img_moblie/p_grew_pic1.jpg">
-						<p>带宝贝奔跑</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_grew_pic2.jpg">
-						<p>带宝贝奔跑</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_grew_pic4.jpg">
-						<p>带宝贝奔跑</p>
-					</a-->
 				</div>
 			</div>
-			<div class="wz wz3 main_c bor1">
+			<div class="wz wz3 main_c bor1" id="baby_posid10">
 				<h3>论坛热议</h3>
 				<?php echo wapRender($arrData, '_10'); ?>
-				<!--a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a>
-				<a href=""><p>九月的到来...</p></a-->
 			</div>
-			<div class="club wz wz1 main_c bor1 clearfix">
+			<div class="club wz wz1 main_c bor1 clearfix" id="baby_posid14">
 				<h3>成长俱乐部</h3>
 				<?php echo wapRender($arrData, '_14'); ?>
-				<!--a href=""><img src="img_moblie/p_club_pic1.jpg"></a>
-				<a href=""><img src="img_moblie/p_club_pic2.jpg"></a>
-				<a href=""><img src="img_moblie/p_club_pic3.jpg"></a-->
 			</div>
 			<div class="online wz wz2 main_c bor1">
 				<h3>大手拉小手</h3>
-				<div class="pic_mod">
+				<div class="pic_mod" id="baby_posid15">
 					<?php echo wapRender($arrData, '_15'); ?>
-					<!--a href="">
-						<img src="img_moblie/p_hand_pic.jpg">	
-						<div><p>专家杨:怎样预防儿童秋季感冒</p></div>
-					</a-->
 				</div>
 			</div>	
 			<div class="see wz wz3 main_c bor1">
 				<h3>时尚辣妈圈</h3>
-				<div class="see_c p_3 clearfix">
+				<div class="see_c p_3 clearfix" id="baby_posid16">
 					<?php echo wapRender($arrData, '_16'); ?>
-					<!--a href="">
-						<img src="img_moblie/p_mothers_pic1.jpg">
-						<p>瘦身瘦身瘦</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_mothers_pic2.jpg">
-						<p>瘦身瘦身瘦身</p>
-					</a>
-					<a href="">
-						<img src="img_moblie/p_mothers_pic3.jpg">
-						<p>瘦身瘦身瘦身</p>
-					</a-->
 				</div>
 			</div>
-			<div class="wz wz3 main_c bor1">
+			<div class="wz wz3 main_c bor1" id="baby_posid17">
 				<h3>摩登风尚</h3>
 				<?php echo wapRender($arrData, '_17'); ?>
-				<!--a href=""><p>九月的到来表示...</p></a>
-				<a href=""><p>为了让宝宝健康...</p></a>
-				<a href=""><p>在《爸爸去哪儿...</p></a-->
 			</div>
-			<div class="wz wz3 main_c bor1">
+			<div class="wz wz3 main_c bor1" id="baby_posid18">
 				<h3>辣妈推荐</h3>
 				<?php echo wapRender($arrData, '_18'); ?>
-				<!--a href=""><p>九月的到来表示...</p></a>
-				<a href=""><p>为了让宝宝健康...</p></a>
-				<a href=""><p>在《爸爸去哪儿...</p></a>
-				<a href=""><p>在《爸爸去哪儿...</p></a-->
 			</div>
 			<div class="cooperate">
 				<h3>合作机构</h3>

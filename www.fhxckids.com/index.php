@@ -58,7 +58,7 @@
 				}
 			} elseif ($modId == '_5') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<div class="lec_pic"><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="330" height="245"><p>'.getTitle($v, 12).'</p></a></div><h6 class="s_bt1 s_bt">'.getTag($v, 4).'<i></i></h6>';
+					$ret[] = '<div id="baby_posid5" class="lec_pic"><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="330" height="245"><p>'.getTitle($v, 12).'</p></a></div><h6 class="s_bt1 s_bt">'.getTag($v, 4).'<i></i></h6>';
 				}
 			} elseif ($modId == '_6') {
 				foreach ($arrMod as $k => $v) {
