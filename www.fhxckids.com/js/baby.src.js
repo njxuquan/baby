@@ -56,7 +56,7 @@
 		}
 	}
 	
-	function loaded(){}
+	function loaded() {}
 
 	function addListener(element, e, fn) {
 		if (element.addEventListener) {
