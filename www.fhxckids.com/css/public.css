@@ -1,0 +1,29 @@
+@charset "gbk";
+/* CSS Document */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, form, fieldset, legend, input, button, textarea, select, option, tr, th, td { border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline; margin:0; padding:0 }
+dl, dt, dd, ol, ul, li { list-style:none }
+body { line-height:25px; font-family:"Î¢ÈíÑÅºÚ"; font-size:16px; color:#000;  }
+table { border-collapse:separate; border-spacing:0 }
+caption, th, td { text-align:left; font-weight:400 }
+table, td, th { vertical-align:middle }
+textarea, input, button, select, keygen, legend { font:12px/1.14 arial, \5b8b\4f53; outline:0; }
+blockquote:before, blockquote:after, q:before, q:after { content:"" }
+a img { border:none }
+ol { margin-left:2em }
+sup { vertical-align:text-top }
+sub { vertical-align:text-bottom }
+html>body p code { white-space:normal }
+hr { margin:-8px auto 11px }
+.clearfix:after, #container:after { content:"\0020"; display:block; height:0; clear:both; visibility:hidden; overflow:hidden }
+.clearfix{zoom:1;}
+.clear { clear:both; height:0; font-size:1px; line-height:0 }
+* html .clearfix, * html #container { height:1% }
+fieldset { padding-top:0 }
+a { color:#333; }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: none; }
+.left{ float:left;}
+.right{ float:right;}
+img{display:block;}
