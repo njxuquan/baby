@@ -11,7 +11,7 @@
 
 	$hash = MD5($cmsid . $cmspositionid . $f);
 	if ($hash == $h) {
-		$strsql = " insert into clicklog(pageid,cmspositionid,sort,cmsid,`status`,clientip,addtime,`from`) values('".$pageid."','".$cmspositionid."','".$sort."','".$cmsid."',1,'".$clientip."',now(),'".$f."'); ";
+		$strsql = " insert into clicklog(pageid,cmspositionid,sort,cmsid,`status`,clientip,addtime,`source`) values('".$pageid."','".$cmspositionid."','".$sort."','".$cmsid."',1,'".$clientip."',now(),'".$f."'); ";
 		//var_dump($strsql);
 		$conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password);
 		$db_selected = mysql_select_db($mysql_database, $conn);

@@ -108,6 +108,7 @@ DROP TABLE IF EXISTS `clicklog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clicklog` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `pageid` int(10) NOT NULL COMMENT '页面id',
   `cmspositionid` int(10) NOT NULL COMMENT '展现位置',
   `sort` int(10) NOT NULL COMMENT '展现位置顺序',
@@ -115,8 +116,9 @@ CREATE TABLE `clicklog` (
   `status` int(10) NOT NULL COMMENT '点击状态',
   `clientip` varchar(128) NOT NULL COMMENT '点击客户端ip',
   `addtime` datetime NOT NULL COMMENT '添加时间',
-  `from` varchar(128) NOT NULL COMMENT '点击来源'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `source` varchar(128) NOT NULL COMMENT '点击来源',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,6 +135,7 @@ DROP TABLE IF EXISTS `dailypv`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dailypv` (
   `day` datetime NOT NULL COMMENT '日期',
+  `pageid` int(10) NOT NULL COMMENT '页面',
   `source` varchar(128) NOT NULL COMMENT 'pv来源',
   `pv` int(10) NOT NULL COMMENT 'pv',
   PRIMARY KEY (`day`,`source`)

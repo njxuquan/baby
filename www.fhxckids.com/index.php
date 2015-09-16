@@ -10,7 +10,7 @@
 	$conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password);
 	$db_selected = mysql_select_db($mysql_database, $conn);
 	
-	$strsql1 = " insert into dailypv(day,source,pv) values(CURDATE(),'".$source."',1) on duplicate key update pv=pv+1; ";
+	$strsql1 = " insert into dailypv(day,pageid,source,pv) values(CURDATE(),1,'".$source."',1) on duplicate key update pv=pv+1; ";
 	$strsql2 = " SELECT id,title,content,tag,link,imgurl,cmspositionid,sort FROM cms where begindate <= now() and enddate > now() and pageid = 1; ";
 	mysql_query("SET NAMES 'utf8'", $conn);
 	$result = mysql_query($strsql1, $conn);
@@ -58,7 +58,11 @@
 				}
 			} elseif ($modId == '_3') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<span><a onclick="_gaq.push([\'_trackEvent\', \'政策解读\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'">'.getTitle($v, 15).'</a></span>';
+					if ($k == '_2') {
+						$ret[] = '<li><span class="span2">'.getTag($v, 3).'</span><a onclick="_gaq.push([\'_trackEvent\', \'政策解读\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'">'.getTitle($v, 15).'</a></li>';
+					} else {
+						$ret[] = '<li><span>'.getTag($v, 3).'</span><a onclick="_gaq.push([\'_trackEvent\', \'政策解读\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'">'.getTitle($v, 15).'</a></li>';
+					}
 				}
 			} elseif ($modId == '_4') {
 				foreach ($arrMod as $k => $v) {
@@ -159,17 +163,17 @@
 			} elseif ($modId == '_19') {
 				foreach ($arrMod as $k => $v) {
 					if ($k == '_1') {
-						$ret[] = '<div class="show_t"><ul class="clearfix"><li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 10).'</p></a></li>';
+						$ret[] = '<div class="show_t"><ul class="clearfix"><li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 9).'</p></a></li>';
 					} elseif ($k == '_2' || $k == '_3' || $k == '_7') {
-						$ret[] = '<li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 10).'</p></a></li>';
+						$ret[] = '<li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 9).'</p></a></li>';
 					} elseif ($k == '_4') {
-						$ret[] = '<li class="m_r1"><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="465" height="300"><p>'.getTitle($v, 10).'</p></a></li></ul></div>';
+						$ret[] = '<li class="m_r1"><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="465" height="300"><p>'.getTitle($v, 9).'</p></a></li></ul></div>';
 					} elseif ($k == '_5') {
-						$ret[] = '<div class="show_b"><ul class="clearfix"><li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 10).'</p></a></li>';
+						$ret[] = '<div class="show_b"><ul class="clearfix"><li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 9).'</p></a></li>';
 					} elseif ($k == '_6') {
-						$ret[] = '<li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="465" height="300"><p>'.getTitle($v, 10).'</p></a></li>';
+						$ret[] = '<li><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="465" height="300"><p>'.getTitle($v, 9).'</p></a></li>';
 					} elseif ($k == '_8') {
-						$ret[] = '<li class="m_r1"><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 10).'</p></a></li></ul></div>';
+						$ret[] = '<li class="m_r1"><a onclick="_gaq.push([\'_trackEvent\', \'宝贝show\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="225" height="300"><p>'.getTitle($v, 9).'</p></a></li></ul></div>';
 					}
 				}
 			}

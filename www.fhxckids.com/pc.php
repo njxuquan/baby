@@ -43,15 +43,22 @@
 			<div class="sub_mod clearfix">
 				<div>
 					<h5>政策解读</h5>
-					<div class="area clearfix">
-						<p class="p1">
-							<span>南京</span>
-							<span class="span2">苏州</span>
-							<span>连云港</span>	
-						</p>
-						<p class="p2" id="baby_posid3">
-							<?php echo pcRender($arrData, '_3'); ?>	
-						</p>
+					<div class="area clearfix" id="baby_posid3">
+						<ul>
+							<?php echo pcRender($arrData, '_3'); ?>
+							<!--li>
+								<span>南京</span>
+								<a href="">小学校长强迫学生用打坐代替</a>
+							</li>
+							<li>
+								<span class="span2">苏州</span>
+								<a href="">家长为求孩子被老师关注群里</a>
+							</li>
+							<li>
+								<span>连云港</span>
+								<a href="">小学校长强迫学生用打坐代替</a>
+							</li-->
+						</ul>
 					</div>	
 				</div>
 				<div class="sub_mod_l m_r1">
@@ -96,7 +103,7 @@
 			<ul class="hot" id="baby_posid2">
 				<?php echo pcRender($arrData, '_2'); ?>
 			</ul>	
-			<h3 class="sid_tit sid_tit1">专家讲座</h3>
+			<h3 id="lecture" class="sid_tit sid_tit1">专家讲座</h3>
 			<div class="bor_t bor_t1">
 				<div class="lecture bor_to bor_to1">
 					<?php echo pcRender($arrData, '_5'); ?>
