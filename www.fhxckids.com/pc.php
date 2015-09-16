@@ -101,9 +101,9 @@
 				<div class="lecture bor_to bor_to1">
 					<?php echo pcRender($arrData, '_5'); ?>
 					<h6 class="s_bt2 s_bt">讲座精选</h6>
-					<?php echo pcRender($arrData, '_6'); ?>
-					<!--p><a href="">心里有数，0-3岁宝宝的身高体重发育发育</a></p>
-					<p><a href="">宝宝智力开发的五个阶段</a></p-->
+					<div id="baby_posid6">
+						<?php echo pcRender($arrData, '_6'); ?>
+					</div>
 				</div>
 			</div>
 			<h3 class="sid_tit sid_tit2">帮你帮我</h3>
@@ -224,6 +224,15 @@
 		<em><img src="img/p_side_on.jpg"></em>
 	</div>
 	<script type="text/javascript" src="js/baby.src.js"></script>
+	<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-67543977-1', 'auto');
+		ga('send', 'pageview');	
+	</script>
 </body>
 </html>
 

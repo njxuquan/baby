@@ -77,13 +77,9 @@
 					<?php echo wapRender($arrData, '_5'); ?>
 				</div>
 				<h3>讲座精选</h3>
-				<?php echo wapRender($arrData, '_6'); ?>
-				<!--a href="">
-					<p>暑假即将过去...</p>
-				</a>
-				<a href="">
-					<p>麻麻你必须要...</p>
-				</a-->
+				<div id="baby_posid6">
+					<?php echo wapRender($arrData, '_6'); ?>
+				</div>
 			</div>	
 			<div class="see wz wz3 main_c bor1">
 				<h3>宝宝看世界</h3>
@@ -152,5 +148,14 @@
 		  })        
 		</script>
 		<script type="text/javascript" src="js/baby.src.js"></script>
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-67543977-1', 'auto');
+			ga('send', 'pageview');	
+		</script>
 	</body>
 </html>
