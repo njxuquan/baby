@@ -119,7 +119,7 @@ img{display:block;}
 a:hover p{text-decoration:underline;}
 .lecture .lec_pic p,.seeworld li p,.experience li p,.hand p,.mothers ul li p{height:25px;line-height:25px;background:#fff;position:absolute;text-align:center;color:#505050;bottom:-8px;}
 .lecture .lec_pic a,.seeworld li a,.experience li a,.hand a,.mothers ul li a{color:#505050;}
-.lecture>p{padding-left:25px;line-height:30px;color:#3c3c3c;background:url('../img/p_dian_gr.jpg') left center no-repeat;}
+.lecture>div>p{padding-left:25px;line-height:30px;color:#3c3c3c;background:url('../img/p_dian_gr.jpg') left center no-repeat;}
 .s_bt{font-size:14px;text-align:center;width:68px;height:20px;line-height:20px;color:#fff;position:absolute;}
 .s_bt i{display:block;width:100%;height:2px;background:#fff;position:absolute;left:0;bottom:-2px;}
 

@@ -99,6 +99,51 @@ LOCK TABLES `page` WRITE;
 INSERT INTO `page` VALUES (1,'亲子首页');
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `clicklog`
+--
+
+DROP TABLE IF EXISTS `clicklog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clicklog` (
+  `pageid` int(10) NOT NULL COMMENT '页面id',
+  `cmspositionid` int(10) NOT NULL COMMENT '展现位置',
+  `sort` int(10) NOT NULL COMMENT '展现位置顺序',
+  `cmsid` int(10) NOT NULL COMMENT 'cms id',
+  `status` int(10) NOT NULL COMMENT '点击状态',
+  `clientip` varchar(128) NOT NULL COMMENT '点击客户端ip',
+  `addtime` datetime NOT NULL COMMENT '添加时间',
+  `from` varchar(128) NOT NULL COMMENT '点击来源'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clicklog`
+--
+
+
+--
+-- Table structure for table `dailypv`
+--
+
+DROP TABLE IF EXISTS `dailypv`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dailypv` (
+  `day` datetime NOT NULL COMMENT '日期',
+  `source` varchar(128) NOT NULL COMMENT 'pv来源',
+  `pv` int(10) NOT NULL COMMENT 'pv',
+  PRIMARY KEY (`day`,`source`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dailypv`
+--
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

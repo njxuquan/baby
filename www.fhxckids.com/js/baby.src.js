@@ -36,7 +36,7 @@
 		if (srcElement) {
 			var babyinfo = srcElement.getAttribute("babyinfo");
 			if (babyinfo) {
-				var src = 'http://192.168.72.130:8080/click.php?' + babyinfo + "&time=" + (new Date()).getTime();
+				var src = 'http://www.fhxckids.com/click.php?' + babyinfo + "&time=" + (new Date()).getTime();
 				jsonp(src);
 			}
 		}

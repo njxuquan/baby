@@ -1,28 +1,32 @@
 <?php
-	$mysql_server_name = 'localhost';
-	$mysql_username = 'root';
-	$mysql_password = 'root';
-	$mysql_database = 'baby';
+	include_once 'config.php';
+
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	if (strpos($user_agent, 'MicroMessenger') === false) {
+		$source = 'pc';
+	} else {
+		$source = 'wap';
+	}
 	$conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password);
 	$db_selected = mysql_select_db($mysql_database, $conn);
 	
-	$strsql = " SELECT id,title,content,tag,link,imgurl,cmspositionid,sort FROM cms where begindate <= now() and enddate > now() and pageid = 1 ";
+	$strsql1 = " insert into dailypv(day,source,pv) values(CURDATE(),'".$source."',1) on duplicate key update pv=pv+1; ";
+	$strsql2 = " SELECT id,title,content,tag,link,imgurl,cmspositionid,sort FROM cms where begindate <= now() and enddate > now() and pageid = 1; ";
 	mysql_query("SET NAMES 'utf8'", $conn);
-	$result = mysql_query($strsql, $conn);
-	//var_dump($result);
+	$result = mysql_query($strsql1, $conn);
+	$result = mysql_query($strsql2, $conn);
 	$arrData = array();
 	while($row = mysql_fetch_array($result))
 	{
 		if (array_key_exists('_' . $row['cmspositionid'], $arrData)) {
-			$arrData['_' . $row['cmspositionid']]['_' . $row['sort']] = array('cmspositionid' => $row['cmspositionid'], 'id' => $row['id'], 'title' => $row['title'], 'content' => $row['content'], 'tag' => $row['tag'], 'link' => $row['link'], 'imgurl' => $row['imgurl']);
+			$arrData['_' . $row['cmspositionid']]['_' . $row['sort']] = array('cmspositionid' => $row['cmspositionid'], 'id' => $row['id'], 'title' => $row['title'], 'content' => $row['content'], 'tag' => $row['tag'], 'link' => $row['link'], 'imgurl' => $row['imgurl'], 'sort' => $row['sort']);
 		} else {
-			$arrData['_' . $row['cmspositionid']] = array('_' . $row['sort'] => array('cmspositionid' => $row['cmspositionid'], 'id' => $row['id'], 'title' => $row['title'], 'content' => $row['content'], 'tag' => $row['tag'], 'link' => $row['link'], 'imgurl' => $row['imgurl']));
+			$arrData['_' . $row['cmspositionid']] = array('_' . $row['sort'] => array('cmspositionid' => $row['cmspositionid'], 'id' => $row['id'], 'title' => $row['title'], 'content' => $row['content'], 'tag' => $row['tag'], 'link' => $row['link'], 'imgurl' => $row['imgurl'], 'sort' => $row['sort']));
 		}
 	}
 	mysql_close($conn);
 
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	if (strpos($user_agent, 'MicroMessenger') === false) {
+	if ($source == 'pc') {
 		include_once 'pc.php';
 	} else {
 		include_once 'wap.php';
@@ -42,7 +46,7 @@
 				}
 			} elseif ($modId == '_1') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<li><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="780" height="320"><p><span>'.getTitle($v, 10).'</span></p></a></li>';
+					$ret[] = '<li><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="780" height="320"><p><span>'.getTitle($v, 22).'</span></p></a></li>';
 				}
 			} elseif ($modId == '_2') {
 				foreach ($arrMod as $k => $v) {
@@ -281,7 +285,7 @@
 	}
 	function getInfo($arr, $from) {
 		$hash = MD5($arr['id'] . $arr['cmspositionid'] . $from);
-		return 'pageid=1&amp;cmsid=' . $arr['id'] . '&amp;cmspositionid=' . $arr['cmspositionid'] . '&amp;f=' . $from .'&amp;h=' . $hash;
+		return 'pageid=1&amp;sort=' . $arr['sort'] . '&amp;cmsid=' . $arr['id'] . '&amp;cmspositionid=' . $arr['cmspositionid'] . '&amp;f=' . $from .'&amp;h=' . $hash;
 	}
 	
 	function getImg($arr) {
