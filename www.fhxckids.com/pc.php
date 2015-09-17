@@ -16,9 +16,6 @@
 
 </head>
 <body>
-	<div class="banners banners1" id="baby_posid20">
-		<?php echo pcRender($arrData, '_20'); ?>	
-	</div>
 	<div class="header_b main m_b1 clearfix">
 		<a class="left" href="#" target="_self" >
 			<img src="img/p_logo.jpg">
@@ -175,9 +172,6 @@
 				<?php echo pcRender($arrData, '_15'); ?>
 			</div>	
 		</div>		
-	</div>
-	<div class="banners banners2" id="baby_posid21">
-		<?php echo pcRender($arrData, '_21'); ?>	
 	</div>
 	<div id="s_tit5" class="s_tit s_tit5 clearfix main">
 		<h6><span>时尚辣妈圈</span></h6>

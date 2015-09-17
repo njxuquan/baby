@@ -61,7 +61,7 @@ img{display:block;}
 .s_tit p img{margin-top:8px;}
 .s_tit1{border-color:#ff8c00;}
 .s_tit1 h6{background-image:url('../img/p_tit_b1.jpg');}
-.s_tit2{border-color:#f54b55;}
+.s_tit2{border-color:#f54b55;padding-top:20px;}
 .s_tit2 h6{background-image:url('../img/p_tit_b2.jpg');}
 .s_tit3{border-color:#3fcad6;}
 .s_tit3 h6{background-image:url('../img/p_tit_b3.jpg');}

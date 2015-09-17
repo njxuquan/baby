@@ -12,11 +12,17 @@
 		<meta content="0" http-equiv="expires">
 		<meta content="telephone=no, address=no" name="format-detection">
 		<meta name="apple-mobile-web-app-capable" content="yes"> 
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">		
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">	
+		<script type="text/javascript" src="js/jquery.js"></script>	
 		<link rel="stylesheet" href="css/swiper.3.1.2.min.css">
 		<link rel="stylesheet" type="text/css" href="css/moblie.css">
-		
-		      
+		<script>
+			$(function(){			
+				var sw_w=$('.swiper-slide').width()/780*400;
+				$('.swiper-slide').height(sw_w);
+				$('.swiper-container').height(sw_w);
+				})
+		</script> 		      
 	</head> 
 	<body>
 		<header >

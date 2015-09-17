@@ -1,12 +1,23 @@
 ﻿<?php
 	include_once 'config.php';
 
+	function is_mobile(){
+		$regex_match='/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220)/i';      
+		return isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE']) or preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']));
+	}
+	if (is_mobile()) {
+		$source = 'wap';
+	} else {
+		$source = 'pc';
+	}
+	/*
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	if (strpos($user_agent, 'MicroMessenger') === false) {
 		$source = 'pc';
 	} else {
 		$source = 'wap';
 	}
+	*/
 	$conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password);
 	$db_selected = mysql_select_db($mysql_database, $conn);
 	
@@ -40,9 +51,13 @@
 			//var_dump($arrMod);
 			$ret = array();
 			$from = 'pc';
-			if ($modId == '_20' || $modId == '_21') {
+			if ($modId == '_20') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<a onclick="_gaq.push([\'_trackEvent\', \'bannersmall\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="1190" height="90"></a>';
+					$ret[] = '<div class="banners banners1" id="baby_posid20"><a onclick="_gaq.push([\'_trackEvent\', \'bannersmall\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="1190" height="90"></a></div>';
+				}
+			} elseif ($modId == '_21') {
+				foreach ($arrMod as $k => $v) {
+					$ret[] = '<div class="banners banners2" id="baby_posid21"><a onclick="_gaq.push([\'_trackEvent\', \'bannersmall\', \'action\', \'label\', \'value\', \'true\']);" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="1190" height="90"></a></div>';
 				}
 			} elseif ($modId == '_1') {
 				foreach ($arrMod as $k => $v) {
