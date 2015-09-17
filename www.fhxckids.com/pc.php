@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="header_b main m_b1 clearfix">
-		<a class="left" href="#" target="_self" >
+		<a class="left" href="/" target="_self" >
 			<img src="img/p_logo.jpg">
 		</a>
 		<div class="right header_r">
