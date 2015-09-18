@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CmsSearch */
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
@@ -57,14 +58,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label'=>'图片url',
                 'format' => ['image',['width'=>'100','height'=>'100']],
             ],
-            [
-                'attribute'=>'pageid',
-                'label'=>'所在页面',
-            ],
-            [
-                'attribute'=>'cmspositionid',
-                'label'=>'cms位置',
-            ],
+			[
+				'label' => '所在页面', 
+				'attribute' => 'page.name', 
+				'filter' => Html::activeDropDownList($searchModel, 'page_name', ArrayHelper::map($pages, 'id', 'name'), ['prompt' => 'All'])
+			],
+			[
+				'label' => 'cms位置', 
+				'attribute' => 'cmsposition.name', 
+				//'filter' => Html::activeTextInput($searchModel, 'cmsposition_name',['class'=>'form-control'])
+				'filter' => Html::activeDropDownList($searchModel, 'cmsposition_name', ArrayHelper::map($cmspositions, 'id', 'name'), ['prompt' => 'All'])
+			],
             [
                 'attribute'=>'sort',
                 'label'=>'cms位置顺序',

@@ -12,6 +12,9 @@ use app\models\Cms;
  */
 class CmsSearch extends Cms
 {
+	public $page_name;
+	public $cmsposition_name;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +22,7 @@ class CmsSearch extends Cms
     {
         return [
             [['id', 'status', 'pageid', 'cmspositionid', 'sort'], 'integer'],
-            [['title', 'content', 'tag', 'begindate', 'enddate', 'addtime', 'imgurl', 'link'], 'safe'],
+            [['title', 'content', 'tag', 'begindate', 'enddate', 'addtime', 'imgurl', 'link', 'page_name', 'cmsposition_name'], 'safe'],
         ];
     }
 
@@ -42,6 +45,8 @@ class CmsSearch extends Cms
     public function search($params)
     {
         $query = Cms::find();
+		$query->joinWith(['page']);
+		$query->joinWith(['cmsposition']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -61,8 +66,8 @@ class CmsSearch extends Cms
             'enddate' => $this->enddate,
             'addtime' => $this->addtime,
             'status' => $this->status,
-            'pageid' => $this->pageid,
-            'cmspositionid' => $this->cmspositionid,
+            'cms.pageid' => $this->page_name,
+            'cmspositionid' => $this->cmsposition_name,
             'sort' => $this->sort,
         ]);
 

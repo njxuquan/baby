@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\models\Page;
 use app\models\Cmsposition;
+use app\models\CmspositionSearch;
 
 /**
  * CmsController implements the CRUD actions for Cms model.
@@ -38,9 +39,14 @@ class CmsController extends Controller
         $searchModel = new CmsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+		$pages = Page::find()->all();
+		$cmspositions = Cmsposition::find()->all();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+			'pages' => $pages,
+			'cmspositions' => $cmspositions,
         ]);
     }
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\Page;
 
 /**
  * This is the model class for table "cms".
@@ -65,5 +66,13 @@ class Cms extends \yii\db\ActiveRecord
             'cmspositionid' => 'Cmspositionid',
             'sort' => 'Sort',
         ];
+    }
+
+	public function getPage(){  
+        return $this->hasOne(Page::className() ,['id' => 'pageid']);  
+    }
+
+	public function getCmsposition(){  
+        return $this->hasOne(Cmsposition::className() ,['id' => 'cmspositionid']);  
     }
 }
