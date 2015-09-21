@@ -146,10 +146,10 @@
 				<h3>辣妈推荐</h3>
 				<?php echo wapRender($arrData, '_18'); ?>
 			</div>
-			<div class="cooperate">
+			<!--div class="cooperate">
 				<h3>合作机构</h3>
 				<img src="img_moblie/p_hzdw.jpg">
-			</div>
+			</div-->
 			<div class="footer">
 				<p class="nav_f"> 
 					<span><a href="">触屏版</a></span>|
