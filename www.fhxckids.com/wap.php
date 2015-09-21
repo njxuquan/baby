@@ -14,15 +14,30 @@
 		<meta name="apple-mobile-web-app-capable" content="yes"> 
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">	
 		<script type="text/javascript" src="js/jquery.js"></script>	
+		<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script> 
 		<link rel="stylesheet" href="css/swiper.3.1.2.min.css">
 		<link rel="stylesheet" type="text/css" href="css/moblie.css">
 		<script>
-			$(function(){			
-				var sw_w=$('.swiper-slide').width()/780*400;
-				$('.swiper-slide').height(sw_w);
-				$('.swiper-container').height(sw_w);
+			$(function(){	
+					$(window).resize(function () {
+						fx();	
+					});	
+					fx();	
+				function fx(){var sw_w=$('.swiper-container').width()/780*400;
+					$('.swiper-slide').height(sw_w);
+					$('.swiper-container').height(sw_w);
+				}
 				})
-		</script> 		      
+		</script>
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-67543977-1', 'auto');
+			ga('send', 'pageview');	
+		</script> 	      
 	</head> 
 	<body>
 		<header >
@@ -139,29 +154,13 @@
 				<p class="nav_f"> 
 					<span><a href="">触屏版</a></span>|
 					<span><a href="">电脑版</a></span>|
-					<span><a href="">微信号:xxxxxxx</a></span>
+					<span><a href="">微信号:fhxckids</a></span>
 				</p>	
 				<p>Copyright &copy; 2015 江苏凤凰克莱教育信息咨询有限公司</p>
 				<p>苏ICP13048008号</p>
 			</div>
 		</div>
 		<script src="js/swiper.3.1.2.min.js"></script>
-		<script>        
-		  var mySwiper = new Swiper ('.swiper-container', {
-		  	loop: true,
-		  	pagination: '.swiper-pagination',
-		    autoplay: 5000,		    
-		  })        
-		</script>
-		<script type="text/javascript" src="js/baby.src.js"></script>
-		<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			
-			ga('create', 'UA-67543977-1', 'auto');
-			ga('send', 'pageview');	
-		</script>
+
 	</body>
 </html>

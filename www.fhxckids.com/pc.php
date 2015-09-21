@@ -12,8 +12,17 @@
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/qingzi.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script> 
 <script type="text/javascript" src="js/all_jq.js"></script>
-
+	<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-67543977-1', 'auto');
+		ga('send', 'pageview');	
+	</script>
 </head>
 <body>
 	<div class="header_b main m_b1 clearfix">
@@ -26,7 +35,8 @@
 			<a class="a3" href="#s_tit3" target="_self">发现</a>	
 			<a class="a4" href="#s_tit4" target="_self">阅读</a>	
 			<a class="a5" href="#s_tit5" target="_self">辣妈</a>	
-			<a class="a6" href="#s_tit6" target="_self">SHOW</a>		
+			<a class="a6" href="#s_tit6" target="_self">SHOW</a>
+			<a class="a7" href="http://www.xici.net/b1543829/" target="_self">官方版</a>		
 		</div>	
 	</div>
 	<div class="subject main clearfix">
@@ -39,7 +49,7 @@
 			</div>
 			<div class="sub_mod clearfix">
 				<div>
-					<h5>政策解读</h5>
+					<h5>政策导航</h5>
 					<div class="area clearfix" id="baby_posid3">
 						<ul>
 							<?php echo pcRender($arrData, '_3'); ?>
@@ -195,7 +205,7 @@
 	<div class="show main" id="baby_posid19">
 		<?php echo pcRender($arrData, '_19'); ?>
 	</div>
-	<h3 class="cooperate_tit">合作机构</h3>
+	<!--h3 class="cooperate_tit">合作机构</h3>
 	<div class="cooperate main clearflix">
 		<div>
 		 	<img src="img/p_logo_f1.jpg">
@@ -204,7 +214,7 @@
 		 	<img src="img/p_logo_f4.jpg">
 		 	<img class="m_r1" src="img/p_logo_f5.jpg">
 	 	</div>
-	</div>
+	</div-->
 	<div class="footer">
 		<p class="nav">
 			<span><a href="#s_tit1" target="_self">0-3岁</a></span>|	
@@ -225,15 +235,7 @@
 		<em><img src="img/p_side_on.jpg"></em>
 	</div>
 	<script type="text/javascript" src="js/baby.src.js"></script>
-	<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		ga('create', 'UA-67543977-1', 'auto');
-		ga('send', 'pageview');	
-	</script>
+
 </body>
 </html>
 
