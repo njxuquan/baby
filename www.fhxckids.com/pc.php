@@ -30,13 +30,13 @@
 			<img src="img/p_logo.jpg">
 		</a>
 		<div class="right header_r">
-			<a class="a1" href="#s_tit1" target="_self">0-3岁</a>
-			<a class="a2" href="#s_tit2" target="_self">3-6岁</a>	
-			<a class="a3" href="#s_tit3" target="_self">发现</a>	
-			<a class="a4" href="#s_tit4" target="_self">阅读</a>	
-			<a class="a5" href="#s_tit5" target="_self">辣妈</a>	
-			<a class="a6" href="#s_tit6" target="_self">SHOW</a>
-			<a class="a7" href="http://www.xici.net/b1543829/" target="_self">官方版</a>		
+			<a class="a1" href="#s_tit1" onclick="ga('send', 'event', 'link', 'click', '导航-0-3岁');" target="_self">0-3岁</a>
+			<a class="a2" href="#s_tit2" onclick="ga('send', 'event', 'link', 'click', '导航-3-6岁');" target="_self">3-6岁</a>	
+			<a class="a3" href="#s_tit3" onclick="ga('send', 'event', 'link', 'click', '导航-发现');" target="_self">发现</a>	
+			<a class="a4" href="#s_tit4" onclick="ga('send', 'event', 'link', 'click', '导航-阅读');" target="_self">阅读</a>	
+			<a class="a5" href="#s_tit5" onclick="ga('send', 'event', 'link', 'click', '导航-辣妈');" target="_self">辣妈</a>	
+			<a class="a6" href="#s_tit6" onclick="ga('send', 'event', 'link', 'click', '导航-SHOW');" target="_self">SHOW</a>
+			<a class="a7" href="http://www.xici.net/b1543829/" onclick="ga('send', 'event', 'link', 'click', '导航-官方版');">官方版</a>		
 		</div>	
 	</div>
 	<div class="subject main clearfix">
@@ -53,18 +53,6 @@
 					<div class="area clearfix" id="baby_posid3">
 						<ul>
 							<?php echo pcRender($arrData, '_3'); ?>
-							<!--li>
-								<span>南京</span>
-								<a href="">小学校长强迫学生用打坐代替</a>
-							</li>
-							<li>
-								<span class="span2">苏州</span>
-								<a href="">家长为求孩子被老师关注群里</a>
-							</li>
-							<li>
-								<span>连云港</span>
-								<a href="">小学校长强迫学生用打坐代替</a>
-							</li-->
 						</ul>
 					</div>	
 				</div>
@@ -180,6 +168,7 @@
 			<h3 class="sid_tit sid_tit5">大手拉小手</h3>
 			<div class="hand" id="baby_posid15">
 				<?php echo pcRender($arrData, '_15'); ?>
+				<h6 class="s_bt">天伦之乐<i></i></h6>
 			</div>	
 		</div>		
 	</div>
@@ -200,21 +189,26 @@
 		</div>
 	</div>
 	<div id="s_tit6" class="s_tit s_tit6 clearfix main" style="*padding-top:20px;">
-		<h6><span>宝贝SHOW</span></h6>
+		<h6><span>宝贝<font>SHOW</font></span></h6>
 	</div>
 	<div class="show main" id="baby_posid19">
 		<?php echo pcRender($arrData, '_19'); ?>
 	</div>
-	<!--h3 class="cooperate_tit">合作机构</h3>
-	<div class="cooperate main clearflix">
+	<h3 class="cooperate_tit main">合作机构</h3>
+	<div class="cooperate main clearfix">	
+		
 		<div>
-		 	<img src="img/p_logo_f1.jpg">
-		 	<img src="img/p_logo_f2.jpg">
-		 	<img src="img/p_logo_f3.jpg">
-		 	<img src="img/p_logo_f4.jpg">
-		 	<img class="m_r1" src="img/p_logo_f5.jpg">
-	 	</div>
-	</div-->
+			<div class="div1">		
+		 	<img src="img/p_logo_f1.jpg">	
+		 	</div>	
+		 	<div class="div2">	 	
+		 	<img src="img/p_logo_f6.jpg">
+		 	</div>
+		 	<div class="div3">	
+		 	<img src="img/p_logo_f4.jpg">	
+		 	</div>
+		</div>
+	</div>
 	<div class="footer">
 		<p class="nav">
 			<span><a href="#s_tit1" target="_self">0-3岁</a></span>|	

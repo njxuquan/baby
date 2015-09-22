@@ -148,8 +148,8 @@ a:hover p{text-decoration:underline;}
 .forum ul li{float:left;width:305px;padding-left:23px;background:url('../img/i_form.jpg') left center no-repeat;}
 .forum ul li.li1{margin-right:62px;}
 .forum ul li p{border-bottom:1px dashed #e6e6e6;line-height:40px;}
-.club{padding:24px 0 0 16px;}
-.club li{float:left;margin-right:30px;}
+.club{padding:24px 0 0 0;}
+.club li{float:left;margin-right:35px;}
 .club img{width:168px;height:230px;}
 
 .qh_mod{margin-bottom:38px;padding-top:40px;}
@@ -179,7 +179,7 @@ a:hover p{text-decoration:underline;}
 
 .hand{padding-left:21px;position:relative;}
 .hand p{width:254px;left:57px;}
-
+.hand .s_bt{top:0;left:11px;background:#F9984D;}
 
 .mothers ul{margin-bottom:43px;}
 .mothers ul li{float:left;margin-right:40px;position:relative;}
@@ -203,10 +203,15 @@ a:hover p{text-decoration:underline;}
 .show ul li p{background:url('../img/p_banner_b1.png') center no-repeat;height:50px;line-height:50px;position:absolute;width:100%;left:0;bottom:0;text-align:center;}
 .show ul li a{color:#fff;text-decoration:underline;}
 
-.cooperate_tit{text-align:center;font-size:30px;line-height:30px;margin-bottom:27px;}
-.cooperate{padding-bottom:46px;margin-bottom:47px;border-bottom:2px solid #eeeeee;}
-.cooperate div{padding-left:18px;}
-.cooperate img{float:left;margin-right:55px;}
+.cooperate_tit{text-align:center;font-size:30px;line-height:30px;margin-bottom:30px;}
+.cooperate{padding-bottom:45px;margin-bottom:47px;border-bottom:2px solid #eeeeee;}
+.cooperate>div{width:798px;margin:0 auto;}
+.cooperate>div>div{height:36px;}
+.cooperate>div>div.div1{float:left;border-right:1px solid #eee;width:285px;text-align:left;}
+.cooperate>div>div.div2{float:left;border-right:1px solid #eee;width:33.3%;text-align:center;}
+.cooperate>div>div.div3{float:right;text-align:right;}
+.cooperate img{display:inline-block;}
+
 
 .footer{line-height:28px;font-size:12px;color:#aaaaaa;text-align:center;padding-bottom:60px;}
 .footer span{padding:0 10px;}
@@ -218,3 +223,8 @@ a:hover p{text-decoration:underline;}
 .side img{cursor:pointer;}
 .side em{position:absolute;left:-190px;top:0;display:none;}
 .side i,.side span{display:block;border:1px solid #ccc;}
+
+
+
+/*.s_tit1 h6 span,.s_tit2 h6 span,.s_tit3 h6 span,.s_tit4 h6 span,.s_tit5 h6 span{letter-spacing: 2px;}*/
+.s_tit6 h6 span font{font-family:Arial;}
