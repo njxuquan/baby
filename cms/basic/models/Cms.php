@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use app\models\Page;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "cms".
@@ -37,12 +38,14 @@ class Cms extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'imgurl', 'begindate', 'enddate', 'addtime', 'status', 'pageid', 'cmspositionid', 'sort', 'link', 'content'], 'required', 'message' => '不能为空'],
-            [['begindate', 'enddate', 'addtime'], 'safe'],
+            [['title', 'addtime', 'status', 'pageid', 'cmspositionid', 'sort', 'link', 'content'], 'required', 'message' => '不能为空'],
+            [['addtime'], 'safe'],
             [['status', 'pageid', 'cmspositionid', 'sort'], 'integer'],
             [['title', 'content', 'imgurl', 'link'], 'string', 'max' => 512],
             [['tag'], 'string', 'max' => 128],
-            [['link'], 'url', 'message'=>'必须是url']
+            [['link'], 'url', 'message'=>'必须是url'],
+			//[['imgurl'], 'checkimg', 'on'=>'create,update'],
+			//[['begindate'], 'checkdate']
         ];
     }
 
@@ -75,4 +78,31 @@ class Cms extends \yii\db\ActiveRecord
 	public function getCmsposition(){  
         return $this->hasOne(Cmsposition::className() ,['id' => 'cmspositionid']);  
     }
+
+	public function checkimg($attribute, $params){
+		//var_dump(Yii::$app->request->post());
+		$image = yii\web\UploadedFile::getInstance($this, 'imgurl');
+		if (empty($image)) {
+			$post = Yii::$app->request->post();
+			$hidden_imgurl = $post['Cms']['hidden_imgurl'];
+			//var_dump($hidden_imgurl);
+			//die();
+			if ($hidden_imgurl == '') {
+				$this->addError($attribute, '请上传图片!');
+			}
+		}
+	}
+
+	public function checkdate($attribute, $params){
+		//$oldtag = Cms::model()->findByAttributes(array('tagname'=>$this->tagname));
+		//$post = Yii::$app->request->post();
+		//$begindate = $post['Cms']['begindate'];
+		//$enddate = $post['Cms']['enddate'];
+		//if(strtotime($enddate) <= strtotime($begindate)){
+			//die('dsfsdf');
+		//	$this->addError($attribute, 'sdgdfg');
+		//}
+		$this->addError($attribute, 'sdgdfg');
+		//echo '1111';
+	}
 }
