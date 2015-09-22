@@ -24,6 +24,8 @@
 	if ($hash === $payloadHash) {
 		   //µ÷ÓÃshell
 		//echo exec("/data/Git.sh");
-		echo json_encode(array($payloadHash, $hubSignature));
+		echo "ok";
+	} else {
+		echo "error";
 	}
 ?>
