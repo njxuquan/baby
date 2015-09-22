@@ -81,11 +81,6 @@ class CmsController extends Controller
             $image = UploadedFile::getInstance($model, 'imgurl');
             $ext = $image->getExtension();
             $randName = time() . rand(1000, 9999) . "." . $ext;
-            //$path = abs(crc32($randName) % 500);
-            //$rootPath = $rootPath . $path . "/";
-            //if (!file_exists($path)) {
-            //    mkdir($rootPath,true);
-            //}
             $image->saveAs($rootPath . $randName);
             $model->imgurl = $rootPath.$randName;
             $model->addtime = date('Y-m-d H:i:s');
@@ -114,21 +109,39 @@ class CmsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $oldimgurl = $model->imgurl;
         $rootPath = "uploads/";
         if ($model->load(Yii::$app->request->post())) {
-            //var_dump($model);
-            //die();
-            //if ($model->imgurl != '') {
-                $image = UploadedFile::getInstance($model, 'imgurl');
-                $ext = $image->getExtension();
-                $randName = time() . rand(1000, 9999) . "." . $ext;
-                $image->saveAs($rootPath . $randName);
-                $model->imgurl = $rootPath.$randName;
-            //} else {
-            //    $model->imgurl = $oldimgurl;
-            //}
+			//echo '2222';
+			$image = UploadedFile::getInstance($model, 'imgurl');
+			if (empty($image)) {
+				$post = Yii::$app->request->post();
+				$hidden_imgurl = $post['hidden_imgurl'];
+				die($hidden_imgurl);
+				if ($hidden_imgurl == '') {
+					$model->addError('imgurl', 'ÇëÉÏ´«Í¼Æ¬');
+				}
+				$model->imgurl = $hidden_imgurl;
+			} else {
+				$ext = $image->getExtension();
+				$randName = time() . rand(1000, 9999) . "." . $ext;
+				$image->saveAs($rootPath . $randName);
+				$model->imgurl = $rootPath.$randName;
+			}
+			//echo '4444';
+			$begindate = $post['Cms']['begindate'];
+			$enddate = $post['Cms']['enddate'];
+			$model->addError('begindate', 'sdgdfg');
+			if ($model->hasErrors()) {
+				$pagedata = Page::find()->all();
+				$cmspoaitiondata = Cmsposition::find()->all();
+				return $this->render('update', [
+					'model' => $model,
+					'pagedata' => $pagedata,
+					'cmspoaitiondata' => $cmspoaitiondata,
+				]);
+			}
             if ($model->save()) {
+				//echo '3333';
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {

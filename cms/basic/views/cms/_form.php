@@ -51,6 +51,9 @@ use dosamigos\datepicker\DatePicker;
     ]);?>
 
     <?= $form->field($model, 'imgurl', ['labelOptions' => ['label' => '图片url']])->fileInput() ?>
+	<?php
+		echo Html::hiddenInput('hidden_imgurl', $value = $model->imgurl);
+	?>
 
     <?= $form->field($model, 'pageid', ['labelOptions' => ['label' => '所在页面']])->dropDownList(ArrayHelper::map($pagedata, 'id', 'name')) ?>
 

@@ -51,7 +51,17 @@ class CmsSearch extends Cms
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
+		/*
+		$dataProvider->setSort([
+			'attributes' => [
+				'cmsposition_name' => [
+					'asc' => ['cmsposition.name' => SORT_ASC],
+					'desc' => ['cmsposition.name' => SORT_DESC],
+					'label' => 'test'
+				],
+			]
+		]); 
+		*/
         $this->load($params);
 
         if (!$this->validate()) {
