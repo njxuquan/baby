@@ -38,8 +38,8 @@ class Cms extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'addtime', 'status', 'pageid', 'cmspositionid', 'sort', 'link', 'content'], 'required', 'message' => '不能为空'],
-            [['addtime'], 'safe'],
+            [['title', 'begindate', 'enddate', 'addtime', 'status', 'pageid', 'cmspositionid', 'sort', 'link', 'content'], 'required', 'message' => '不能为空'],
+            [['begindate', 'enddate', 'addtime'], 'safe'],
             [['status', 'pageid', 'cmspositionid', 'sort'], 'integer'],
             [['title', 'content', 'imgurl', 'link'], 'string', 'max' => 512],
             [['tag'], 'string', 'max' => 128],
@@ -103,6 +103,7 @@ class Cms extends \yii\db\ActiveRecord
 		//	$this->addError($attribute, 'sdgdfg');
 		//}
 		$this->addError($attribute, 'sdgdfg');
+		$this->getErrors($attribute);
 		//echo '1111';
 	}
 }

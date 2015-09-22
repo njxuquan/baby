@@ -30,26 +30,32 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'title',
                 'label'=>'标题',
+				//'options'=>array('width'=>"200px"), 
             ],
             [
                 'attribute'=>'content',
                 'label'=>'简介',
+				//'options'=>array('width'=>"200px"), 
             ],
             [
                 'attribute'=>'tag',
                 'label'=>'标签',
+				//'options'=>array('width'=>"80px"), 
             ],
             [
                 'attribute'=>'link',
                 'label'=>'链接',
+				//'options'=>array('width'=>"10px"), 
             ],
             [
                 'attribute'=>'begindate',
                 'label'=>'开始时间',
+				//'options'=>array('width'=>"100px"), 
             ],
             [
                 'attribute'=>'enddate',
                 'label'=>'结束时间',
+				//'options'=>array('width'=>"100px"), 
             ],
             // 'addtime',
             // 'status',

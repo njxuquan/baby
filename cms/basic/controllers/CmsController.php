@@ -79,13 +79,36 @@ class CmsController extends Controller
         $rootPath = "uploads/";
         if ($model->load(Yii::$app->request->post())) {
             $image = UploadedFile::getInstance($model, 'imgurl');
-            $ext = $image->getExtension();
-            $randName = time() . rand(1000, 9999) . "." . $ext;
-            $image->saveAs($rootPath . $randName);
-            $model->imgurl = $rootPath.$randName;
-            $model->addtime = date('Y-m-d H:i:s');
-            $model->status = 1;
+			if (empty($image)) {
+				$model->addError('imgurl', '请上传图片');
+			} else {
+				$ext = $image->getExtension();
+				$randName = time() . rand(1000, 9999) . "." . $ext;
+				$image->saveAs($rootPath . $randName);
+				$model->imgurl = $rootPath.$randName;
+				$model->addtime = date('Y-m-d H:i:s');
+				$model->status = 1;
+			}
 
+			if(strtotime($model->enddate) <= strtotime($model->begindate)) {
+				$model->addError('begindate', '开始时间不能大于结束时间');
+			} else {
+				$sql = " select id from cms where pageid=".$model->pageid." and cmspositionid=".$model->cmspositionid." and `sort`=".$model->sort." and ((unix_timestamp(begindate) <= unix_timestamp('".$model->begindate."') and unix_timestamp(enddate) > unix_timestamp('".$model->begindate."')) or (unix_timestamp(begindate) < unix_timestamp('".$model->enddate."') and unix_timestamp(enddate) > unix_timestamp('".$model->enddate."')) or (unix_timestamp('".$model->begindate."') < unix_timestamp(begindate) and unix_timestamp('".$model->enddate."') > unix_timestamp(begindate)) or (unix_timestamp('".$model->begindate."') > unix_timestamp(enddate) and unix_timestamp('".$model->enddate."') < unix_timestamp(enddate))) ";
+				$row = Cms::findBySql($sql)->all();
+				if (count($row) > 0) {
+					$model->addError('begindate', '同一位置同一时间区间内只能有一条投放广告');
+				}
+			}
+			if ($model->hasErrors()) {
+				$pagedata = Page::find()->all();
+				$cmspoaitiondata = Cmsposition::find()->all();
+				return $this->render('create', [
+					'model' => $model,
+					'pagedata' => $pagedata,
+					'cmspoaitiondata' => $cmspoaitiondata,
+				]);
+			}
+			
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -111,14 +134,12 @@ class CmsController extends Controller
         $model = $this->findModel($id);
         $rootPath = "uploads/";
         if ($model->load(Yii::$app->request->post())) {
-			//echo '2222';
 			$image = UploadedFile::getInstance($model, 'imgurl');
 			if (empty($image)) {
 				$post = Yii::$app->request->post();
 				$hidden_imgurl = $post['hidden_imgurl'];
-				die($hidden_imgurl);
 				if ($hidden_imgurl == '') {
-					$model->addError('imgurl', '���ϴ�ͼƬ');
+					$model->addError('imgurl', '请上传图片');
 				}
 				$model->imgurl = $hidden_imgurl;
 			} else {
@@ -127,10 +148,15 @@ class CmsController extends Controller
 				$image->saveAs($rootPath . $randName);
 				$model->imgurl = $rootPath.$randName;
 			}
-			//echo '4444';
-			$begindate = $post['Cms']['begindate'];
-			$enddate = $post['Cms']['enddate'];
-			$model->addError('begindate', 'sdgdfg');
+			if(strtotime($model->enddate) <= strtotime($model->begindate)) {
+				$model->addError('begindate', '开始时间不能大于结束时间');
+			} else {
+				$sql = " select id from cms where id<>".$model->id." and pageid=".$model->pageid." and cmspositionid=".$model->cmspositionid." and `sort`=".$model->sort." and ((unix_timestamp(begindate) <= unix_timestamp('".$model->begindate."') and unix_timestamp(enddate) > unix_timestamp('".$model->begindate."')) or (unix_timestamp(begindate) < unix_timestamp('".$model->enddate."') and unix_timestamp(enddate) > unix_timestamp('".$model->enddate."')) or (unix_timestamp('".$model->begindate."') < unix_timestamp(begindate) and unix_timestamp('".$model->enddate."') > unix_timestamp(begindate)) or (unix_timestamp('".$model->begindate."') > unix_timestamp(enddate) and unix_timestamp('".$model->enddate."') < unix_timestamp(enddate))) ";
+				$row = Cms::findBySql($sql)->all();
+				if (count($row) > 0) {
+					$model->addError('begindate', '同一位置同一时间区间内只能有一条投放广告');
+				}
+			}
 			if ($model->hasErrors()) {
 				$pagedata = Page::find()->all();
 				$cmspoaitiondata = Cmsposition::find()->all();
@@ -140,8 +166,9 @@ class CmsController extends Controller
 					'cmspoaitiondata' => $cmspoaitiondata,
 				]);
 			}
+			//var_dump($model);
+			//die();
             if ($model->save()) {
-				//echo '3333';
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
