@@ -7,15 +7,15 @@ img{display:block;}
 .banners1{margin:23px 0 20px 0;}
 .banners2{margin-top:40px;}
 
-.header_b .header_r{width:418px;height:33px;line-height:33px;margin-top:16px;position:relative;}
+.header_b .header_r{width:486px;height:33px;overflow:hidden;line-height:33px;margin-top:16px;position:relative;}
 .header_b .header_r a{display:block;width:78px;color:#fff;text-align:center;background-image:url('../img/p_header_r.png');position:absolute;top:0;}
-.header_b .header_r a.a1{background-position:0 0;left:-68px;}
-.header_b .header_r a.a2{background-position:0 -33px;left:0;}
-.header_b .header_r a.a3{background-position:0 -66px;left:68px;}
-.header_b .header_r a.a4{background-position:0 -99px;left:136px;}
-.header_b .header_r a.a5{background-position:0 -132px;left:204px;}
-.header_b .header_r a.a6{background-position:0 -165px;left:272px;}
-.header_b .header_r a.a7{background-position:0 -66px;left:340px;}
+.header_b .header_r a.a1{background-position:0 0;left:-0px;}
+.header_b .header_r a.a2{background-position:0 -33px;left:68px;}
+.header_b .header_r a.a3{background-position:0 -66px;left:136px;}
+.header_b .header_r a.a4{background-position:0 -99px;left:204px;}
+.header_b .header_r a.a5{background-position:0 -132px;left:272px;}
+.header_b .header_r a.a6{background-position:0 -165px;left:340px;font-family:Arial;line-height:36px;}
+.header_b .header_r a.a7{background-position:0 -66px;left:408px;}
 .subject_l{width:780px;}
 .banner{width:100%;height:400px;margin-bottom:42px;overflow:hidden;position:relative;}
 .banner ul li{width:780px;height:400px;position:relative;float:left;}
@@ -45,14 +45,14 @@ img{display:block;}
 .sub_mod_l  ul li span,.sub_mod_l ul li i{display:block;float:left;}
 .sub_mod_l  ul li span{width:2em;color:#3c3c3c;line-height:20px;padding-top:10px;}
 .sub_mod_l  ul li i{width:60px;height:60px;background-image:url('../img/i_gjtj.jpg');margin-right:14px;}
-.sub_mod_l  ul li.li1 a i{background-position:0 -240px;}
-.sub_mod_l  ul li.li1 a:hover i{background-position:0 0;}
-.sub_mod_l  ul li.li2 a i{background-position:0 -300px;}
-.sub_mod_l  ul li.li2 a:hover i{background-position:0 -60px;}
-.sub_mod_l  ul li.li3 a i{background-position:0 -360px;}
-.sub_mod_l  ul li.li3 a:hover i{background-position:0 -120px;}
-.sub_mod_l  ul li.li4 a i{background-position:0 -420px;}
-.sub_mod_l  ul li.li4 a:hover i{background-position:0 -180px;}
+.sub_mod_l  ul li.li1 a i{background:url('../img/i_pic1.jpg');}
+.sub_mod_l  ul li.li1 a:hover i{background:url('../img/i_gjtj.jpg') 0 0;}
+.sub_mod_l  ul li.li2 a i{background:url('../img/i_pic2.jpg');}
+.sub_mod_l  ul li.li2 a:hover i{background:url('../img/i_gjtj.jpg') 0 -60px;}
+.sub_mod_l  ul li.li3 a i{background:url('../img/i_pic3.jpg');}
+.sub_mod_l  ul li.li3 a:hover i{background:url('../img/i_gjtj.jpg') 0 -120px;}
+.sub_mod_l  ul li.li4 a i{background:url('../img/i_pic4.jpg');}
+.sub_mod_l  ul li.li4 a:hover i{background:url('../img/i_gjtj.jpg') 0 -180px;}
 
 .s_tit{border-bottom:2px solid;height:34px;overflow:hidden;margin-bottom:20px;padding-top:40px;}
 .s_tit h6{float:left;color:#fff;font-size:25px;width:172px;line-height:34px;background: left center no-repeat;}
@@ -61,7 +61,7 @@ img{display:block;}
 .s_tit p img{margin-top:8px;}
 .s_tit1{border-color:#ff8c00;}
 .s_tit1 h6{background-image:url('../img/p_tit_b1.jpg');}
-.s_tit2{border-color:#f54b55;}
+.s_tit2{border-color:#f54b55; padding-top:20px!important;}
 .s_tit2 h6{background-image:url('../img/p_tit_b2.jpg');}
 .s_tit3{border-color:#3fcad6;}
 .s_tit3 h6{background-image:url('../img/p_tit_b3.jpg');}
@@ -148,7 +148,7 @@ a:hover p{text-decoration:underline;}
 .forum ul li{float:left;width:305px;padding-left:23px;background:url('../img/i_form.jpg') left center no-repeat;}
 .forum ul li.li1{margin-right:62px;}
 .forum ul li p{border-bottom:1px dashed #e6e6e6;line-height:40px;}
-.club{padding:24px 0 0 0;}
+.club{padding:12px 0 0 0;}
 .club li{float:left;margin-right:35px;}
 .club img{width:168px;height:230px;}
 
@@ -215,6 +215,7 @@ a:hover p{text-decoration:underline;}
 
 .footer{line-height:28px;font-size:12px;color:#aaaaaa;text-align:center;padding-bottom:60px;}
 .footer span{padding:0 10px;}
+
 .footer .nav,.footer .nav a{color:#717171;}
 .footer img{margin:15px auto 0;}
 

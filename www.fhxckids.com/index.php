@@ -81,7 +81,7 @@
 				}
 			} elseif ($modId == '_4') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<li><a class="left" onclick="ga(\'send\', \'event\', \'link\', \'click\', \'健康萌宝贝-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="175" height="130"></a><a class="right" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><h6>'.getTitle($v, 22).'</h6><p>'.getContent($v, 60).'</p></a></li>';
+					$ret[] = '<li><a class="left" onclick="ga(\'send\', \'event\', \'link\', \'click\', \'健康萌宝贝-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="175" height="130"></a><a class="right" onclick="ga(\'send\', \'event\', \'link\', \'click\', \'健康萌宝贝-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><h6>'.getTitle($v, 22).'</h6><p>'.getContent($v, 60).'</p></a></li>';
 				}
 			} elseif ($modId == '_5') {
 				foreach ($arrMod as $k => $v) {
@@ -112,9 +112,9 @@
 					if ($k == '_1') {
 						$ret[] = '<li><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'成长不烦恼-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="235" height="235"><p>'.getTitle($v, 12).'</p></a><h6 class="s_bt4 s_bt">'.getTag($v, 4).'<i></i></h6></li>';
 					} elseif ($k == '_2') {
-						$ret[] = '<li class="m_r1"><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'成长不烦恼-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="235" height="235"><p>'.getTitle($v, 12).'</p></a><h6 class="s_bt5 s_bt">'.getTag($v, 4).'<i></i></h6></li>';
+						$ret[] = '<li><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'成长不烦恼-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="235" height="235"><p>'.getTitle($v, 12).'</p></a><h6 class="s_bt5 s_bt">'.getTag($v, 4).'<i></i></h6></li>';
 					} else {
-						$ret[] = '<li class="m_r1"><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'成长不烦恼-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="235" height="235"><p>'.getTitle($v, 12).'</p></a><h6 class="s_bt6 s_bt">'.getTag($v, 4).'<i></i></h6></li>';
+						$ret[] = '<li class="m_r1"><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'成长不烦恼-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="235" height="235"><p>'.getTitle($v, 12).'</p></a><h6 class="s_bt4 s_bt">'.getTag($v, 4).'<i></i></h6></li>';
 					}
 				}
 			} elseif ($modId == '_10') {
@@ -132,9 +132,9 @@
 			} elseif ($modId == '_12') {
 				foreach ($arrMod as $k => $v) {
 					if ($k == '_1' || $k == '_3' || $k == '_5' || $k == '_7') {
-						$ret[] = '<li class="li1"><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="40" height="40"></a><span><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'">'.getTitle($v, 6).'</a></span></li>';
+						$ret[] = '<li class="li1"><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="40" height="40"></a><span><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'">'.getTitle($v, 6).'</a></span></li>';
 					} else {
-						$ret[] = '<li><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="40" height="40"></a><span><a href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'">'.getTitle($v, 6).'</a></span></li>';
+						$ret[] = '<li><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="40" height="40"></a><span><a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'热门讨论-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'">'.getTitle($v, 6).'</a></span></li>';
 					}
 				}
 			} elseif ($modId == '_13') {
@@ -155,7 +155,7 @@
 				}
 			} elseif ($modId == '_15') {
 				foreach ($arrMod as $k => $v) {
-					$ret[] = '<a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'大手拉小手-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="330" height="245"><p>'.getTitle($v, 12).'</p></a>';
+					$ret[] = '<a onclick="ga(\'send\', \'event\', \'link\', \'click\', \'大手拉小手-No.'.substr($k, 1).'\');" href="'.getUrl($v).'" babyinfo="'.getInfo($v, $from).'"><img src="'.getImg($v).'" width="330" height="245"><p>'.getTitle($v, 12).'</p><h6 class="s_bt">'.getTag($v, 4).'<i></i></h6></a>';
 				}
 			} elseif ($modId == '_16') {
 				foreach ($arrMod as $k => $v) {

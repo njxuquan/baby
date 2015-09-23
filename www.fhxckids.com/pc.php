@@ -26,9 +26,9 @@
 </head>
 <body>
 	<div class="header_b main m_b1 clearfix">
-		<a class="left" href="/" target="_self" >
-			<img src="img/p_logo.jpg">
-		</a>
+		
+			<img class="left" src="img/p_logo.jpg">
+
 		<div class="right header_r">
 			<a class="a1" href="#s_tit1" onclick="ga('send', 'event', 'link', 'click', '导航-0-3岁');" target="_self">0-3岁</a>
 			<a class="a2" href="#s_tit2" onclick="ga('send', 'event', 'link', 'click', '导航-3-6岁');" target="_self">3-6岁</a>	
@@ -36,7 +36,7 @@
 			<a class="a4" href="#s_tit4" onclick="ga('send', 'event', 'link', 'click', '导航-阅读');" target="_self">阅读</a>	
 			<a class="a5" href="#s_tit5" onclick="ga('send', 'event', 'link', 'click', '导航-辣妈');" target="_self">辣妈</a>	
 			<a class="a6" href="#s_tit6" onclick="ga('send', 'event', 'link', 'click', '导航-SHOW');" target="_self">SHOW</a>
-			<a class="a7" href="http://www.xici.net/b1543829/" onclick="ga('send', 'event', 'link', 'click', '导航-官方版');">官方版</a>		
+			<a class="a7" href="http://www.xici.net/b1543829/" onclick="ga('send', 'event', 'link', 'click', '导航-官方版');">互动</a>		
 		</div>	
 	</div>
 	<div class="subject main clearfix">
@@ -60,25 +60,25 @@
 					<h5>育儿工具推荐</h5>
 					<ul class="clearfix">
 						<li class="li1">
-							<a href="http://www.xici.net/d221798215.htm">
+							<a onclick="ga('send', 'event', 'link', 'click', '育儿工具推荐-养育指导');" href="http://www.xici.net/d221798215.htm">
 								<i></i>
 								<span>养育指导</span>
 							</a>	
 						</li>
 						<li class="li2">
-							<a href="http://www.xici.net/d221602426.htm">
+							<a onclick="ga('send', 'event', 'link', 'click', '育儿工具推荐-发育指标');"  href="http://www.xici.net/d221602426.htm">
 								<i></i>
 								<span>发育指标</span>
 							</a>	
 						</li>
 						<li class="li3">
-							<a href="http://www.xici.net/d221598908.htm">
+							<a onclick="ga('send', 'event', 'link', 'click', '育儿工具推荐-疫苗接种');" href="http://www.xici.net/d221598908.htm">
 								<i></i>
 								<span>疫苗接种</span>
 							</a>	
 						</li>
 						<li class="li4">
-							<a href="http://www.xici.net/d221691337.htm">
+							<a onclick="ga('send', 'event', 'link', 'click', '育儿工具推荐-家长手册');"  href="http://www.xici.net/d221691337.htm">
 								<i></i>
 								<span>家长手册</span>
 							</a>	
@@ -168,7 +168,7 @@
 			<h3 class="sid_tit sid_tit5">大手拉小手</h3>
 			<div class="hand" id="baby_posid15">
 				<?php echo pcRender($arrData, '_15'); ?>
-				<h6 class="s_bt">天伦之乐<i></i></h6>
+				<!--h6 class="s_bt">天伦之乐<i></i></h6-->
 			</div>	
 		</div>		
 	</div>
